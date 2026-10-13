@@ -1,0 +1,155 @@
+.App{
+  display: flex;
+  flex-direction: column;
+}
+
+.encabezado{
+  margin : auto;
+}
+
+.encabezado button{
+  margin: 5px;
+}
+
+.formularioClientes{
+  margin: auto;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+  padding: 3px;
+  background-color: aqua;
+}
+
+.btnAceptar{
+  background-color: rgb(37, 180, 37);
+}
+
+.campo{
+  display: flex;
+  justify-content: flex-end;
+  margin: 3px;
+}
+
+label{
+  margin-right: 3px;
+}
+
+input{
+  border-radius: 3px;
+}
+
+.formularioClientes button{
+  margin-bottom: 3px;
+  margin-right: 3px;
+  border-radius: 5px;
+}
+
+.formularioProductos{
+  margin: auto;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: rgb(96, 162, 201);
+}
+
+.formularioProductos button{
+  margin-right: 3px;
+  border-radius: 5px;
+}
+
+table{
+  margin: auto;
+  width: 750px;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+  user-select: none;
+}
+
+th{
+  background-color: #8080c3;
+}
+
+tr:nth-child(even){
+  background-color: aqua;
+}
+
+tr:nth-child(odd){
+  background-color: rgb(5, 114, 78);
+}
+
+.btn-modificar{
+  margin: 3px;
+  background-color: yellow;
+}
+
+.btn-eliminar{
+  margin: 3px;
+  background-color: rgb(199, 68, 68);
+}
+
+.botones button{
+  border-radius: 5px;
+}
+
+.btnActualizarProducto{
+  margin-right: 2px;
+  border-radius: 5px;
+  background-color: yellow;
+}
+
+.btnEliminarProducto{
+  margin-left: 2px;
+  border-radius: 5px;
+  background-color: rgb(199, 68, 68);
+}
+
+.facturacion{
+  text-align: center;
+}
+
+.facturacion input{
+  margin-right: 2px;
+}
+
+.facturacion button{
+  margin-left: 2px;
+}
+
+.tituloTotal{
+  background-color: #8080c3;
+}
+
+.celdaTotal{
+  background-color: yellow;
+}
+
+.encabezadoCliente{
+  background-color: rgb(86, 226, 86);
+}
+
+h3{
+  margin: auto;
+  width: 300px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: rgb(110, 226, 110);
+
+}
+
+.btnFacturasCliente{
+  margin-left: 5px;
+}
+
+button{
+  cursor: pointer;
+}
+
+.listaFacturasCliente{
+  cursor: pointer;
+}
+
+.btnLimpiar{
+  
+}

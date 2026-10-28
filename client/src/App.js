@@ -60,7 +60,7 @@ function App() {
   function actualizarCliente(){
     const confirmar = window.confirm("Esta seguro que desea modificar este registro?");
     if(confirmar){
-      axios.put("http://localhost:3001/actualizarCliente",{
+      axios.put("http://data.onrender.com/actualizarCliente",{
       id: cliente.id,
       nombre: cliente.nombre,
       telefono: cliente.telefono
@@ -86,7 +86,7 @@ function App() {
   function eliminarCliente(val){
     const confirmar = window.confirm("Esta seguro que desea eliminar este registro?");
     if(confirmar){
-      axios.delete(`http://localhost:3001/eliminarCliente/${val.id}`).then(()=>{
+      axios.delete(`http://data.onrender.com/eliminarCliente/${val.id}`).then(()=>{
       alert("El registro ha sido eliminado");
       clientes();
       }).then(err=>{
@@ -96,7 +96,7 @@ function App() {
   };
 
   function clientes(){
-    axios.get("http://localhost:3001/clientes").then((response)=>{
+    axios.get("http://data.onrender.com/clientes").then((response)=>{
       setListaClientes(response.data);
     })
   };
@@ -147,7 +147,7 @@ function App() {
   };
 
   function productos(){
-    axios.get("http://localhost:3001/productos").then((response)=>{
+    axios.get("http://data.onrender.com/productos").then((response)=>{
       setListaProductos(response.data);
     })
   };
@@ -161,7 +161,7 @@ function App() {
       return;
     }
     else{
-      axios.post("http://localhost:3001/agregarProducto",{
+      axios.post("http://data.onrender.com/agregarProducto",{
         nombre: producto.nombre,
         descripcion: producto.descripcion,
         precio: producto.precio,
@@ -180,7 +180,7 @@ function App() {
   function actualizarProducto(){
     const confirmar = window.confirm("Esta seguro que desea modificar este producto");
     if(confirmar){
-      axios.put("http://localhost:3001/actualizarProducto",{
+      axios.put("http://data.onrender.com/actualizarProducto",{
         id: producto.id,
         nombre: producto.nombre,
         descripcion: producto.descripcion,
@@ -200,7 +200,7 @@ function App() {
   function eliminarProducto(val){
     const confirmar = window.confirm("Esta seguro que desea eliminar este producto?");
     if(confirmar){
-      axios.delete(`http://localhost:3001/eliminarProducto/${val.id}`).then(()=>{
+      axios.delete(`http://data.onrender.com/eliminarProducto/${val.id}`).then(()=>{
         alert("Producto eliminado con éxito");
         listaProductos();
       }).catch(err=>{
@@ -277,7 +277,7 @@ function App() {
     });
 
     if(hay){
-      axios.post("http://localhost:3001/crearFactura", {
+      axios.post("http://data.onrender.com/crearFactura", {
       id_cliente: jalarCliente[0].id,
       total: totalGeneral,
       listaProductos: mercancias
@@ -299,7 +299,7 @@ function App() {
   useEffect(()=>{
     if(buscar){
       if(descripcion !== ""){
-        fetch(`http://localhost:3001/buscarProducto/${descripcion}`)
+        fetch(`http://data.onrender.com/buscarProducto/${descripcion}`)
         .then(res => res.json())
         .then(data => setElemento(data));
         setBuscar(false);
@@ -309,7 +309,7 @@ function App() {
 
   function facturasCliente(val){
     setListadoFacturasCliente(true);
-    axios.get(`http://localhost:3001/facturaCliente/${val.id}`)
+    axios.get(`http://data.onrender.com/facturaCliente/${val.id}`)
     .then((result)=>{
       setListaFacturasCliente(result.data);
     })
@@ -317,7 +317,7 @@ function App() {
 
   function detalleFactura(val){
     setListadoDetalleFactura(true);
-    axios.get(`http://localhost:3001/facturaDetalle/${val.id}`)
+    axios.get(`http://data.onrender.com/facturaDetalle/${val.id}`)
     .then((result)=>{
       setListaDetalleFactura(result.data);
     })

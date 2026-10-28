@@ -44,7 +44,7 @@ function App() {
       alert("Este cliente ya esta registrado");
     }
     else{
-      axios.post("http://localhost:3001/agregarCliente",{
+      axios.post("http://data.onrender.com/agregarCliente",{
       nombre: cliente.nombre,
       telefono: cliente.telefono
     }).then(()=>{

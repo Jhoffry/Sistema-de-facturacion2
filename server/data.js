@@ -7,10 +7,20 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-  user: 'root',
-  host: 'localhost',
-  password: '',
-  database: 'sistema_de_ventas_2'
+  user: process.env.DB_USER || 'root',
+  host: process.env.DB_HOST || 'localhost',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || 'sistema_de_ventas_2',
+  port: Number(process.env.DB_PORT || 3306)
+});
+
+db.connect((err)=>{
+  if(err){
+    console.error("Error al conectar con MySQL:", err.message);
+    return
+  }
+
+  console.log("Conectado a MySQL");
 });
 
 /*-----------------------------------------------------------------------------Cliente----------------------------------------------------------------------------------------*/
@@ -255,6 +265,8 @@ app.get("/facturaDetalle/:id_factura", (req, res)=>{
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-app.listen(3001, ()=>{
-  console.log("conectado");
+const port = process.env.port || 3001;
+
+app.listen(port, ()=>{
+  console.log(`conectado en el puerto ${port}`);
 });

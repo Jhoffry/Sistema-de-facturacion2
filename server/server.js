@@ -1,12 +1,19 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql2');
+require("dotnev").config();
 const cors = require('cors');
 
-app.use(cors());
+
+app.use(cors({
+  origin: ["http://localhost:3000",
+    process.env.FRONTEND_URL
+  ].filter(Boolean)
+}));
+
 app.use(express.json());
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
   user: process.env.DB_USER || 'root',
   host: process.env.DB_HOST || 'localhost',
   password: process.env.DB_PASSWORD || '',
@@ -267,6 +274,8 @@ app.get("/facturaDetalle/:id_factura", (req, res)=>{
 
 const port = process.env.port || 3001;
 
-app.listen(port, ()=>{
+/*app.listen(port, ()=>{
   console.log(`conectado en el puerto ${port}`);
-});
+});*/
+
+module.exports = app;

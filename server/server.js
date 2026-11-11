@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql2');
-require("dotnev").config();
+require("dotenv.").config();
 const cors = require('cors');
 
 
@@ -21,14 +21,14 @@ const db = mysql.createPool({
   port: Number(process.env.DB_PORT || 3306)
 });
 
-db.connect((err)=>{
+/*db.connect((err)=>{
   if(err){
     console.error("Error al conectar con MySQL:", err.message);
     return
   }
 
   console.log("Conectado a MySQL");
-});
+});*/
 
 /*-----------------------------------------------------------------------------Cliente----------------------------------------------------------------------------------------*/
 
